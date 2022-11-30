@@ -4,14 +4,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class UseingBufferedReader throws IOException{
+public class UseingBufferedReader {
 
-    BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args) throws IOException {
 
-    String input_string = bf.readLine();
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
-    int input_integer = Integer.parseInt(bf.readLine());
+        String input_string = bf.readLine();
 
-    // TODO 왜 Class 단위 Throws 가 VScode 상에선 되지 않는지 알아보기.
+        int input_integer = Integer.parseInt(bf.readLine());
+
+        System.out.println(input_integer);
+        System.out.println(input_string);
+
+    }
 
 }
