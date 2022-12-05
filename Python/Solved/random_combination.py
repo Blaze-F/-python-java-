@@ -9,8 +9,12 @@ from typing import Dict
 
 
 class RandomCombination:
-    def solution(self, members: list, num_minimum=5, num_maximum=7) -> Dict[str, list]:
-        """멤버들을 셔플한뒤 최적의 인원수를 계산하여 도출합니다."""
+    def mix_members(self, members: list, num_minimum=5, num_maximum=7) -> Dict[str, list]:
+        """멤버들을 셔플한뒤 최적의 인원수를 계산하여 도출합니다.
+
+        Returns:
+            _type_: Dict[str, list]
+        """
         random.shuffle(members)
         num_of_people = len(members)
 
@@ -31,7 +35,10 @@ class RandomCombination:
     def originate(
         self, members: list, count_of_team: int, num_of_people: int, lack_of_people: int
     ) -> Dict[str, list]:
-        """팀을 구성합니다"""
+        """팀을 구성합니다
+
+        Returns:
+            _type_: Dict[str, list]"""
         return_dict = {}
 
         for i in range(1, count_of_team + 1):
@@ -59,8 +66,13 @@ class RandomCombination:
 
         return return_dict
 
-    def calculate_peoples(self, num_minimum: int, num_maximum: int, num_of_people: int) -> Dict:
-        """최적의 인원수를 산출합니다."""
+    def calculate_peoples(
+        self, num_minimum: int, num_maximum: int, num_of_people: int
+    ) -> Dict[str, int]:
+        """최적의 인원수를 산출합니다.
+
+        Returns:
+            _type_: Dict[str, int]"""
         count_of_team = []
         lack_of_people = []
 
@@ -130,6 +142,6 @@ start = time.time()  # 시작 시간 저장
 
 solved = RandomCombination()
 members = [i for i in range(1, 100 + 1)]
-print(solved.solution(members=members))
+print(solved.mix_members(members=members))
 
-print("time :", time.time() - start)  # 현재시각 - 시작시간 = 실행 시간
+print("time :", time.time() - start)  # 현재시각 - 시작시각 = 실행 시간
