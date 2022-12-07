@@ -3,17 +3,17 @@ import sys
 from typing import Dict
 
 
-"""
-맨 밑에 테스팅 있습니다.
-"""
-
-
 class RandomCombination:
     def mix_members(self, members: list, num_minimum=5, num_maximum=7) -> Dict[str, list]:
         """멤버들을 셔플한뒤 최적의 인원수를 계산하여 도출합니다.
 
+        Args:
+            members (list): _description_
+            num_minimum (int, optional): Defaults to 5.
+            num_maximum (int, optional): Defaults to 7.
+
         Returns:
-            _type_: Dict[str, list]
+            Dict[str, list]: _description_
         """
         random.shuffle(members)
         num_of_people = len(members)
