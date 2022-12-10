@@ -24,6 +24,7 @@ class RandomCombination:
         )
 
         # 팀 편성
+
         res = self.originate(
             members=members,
             count_of_team=data["count"],
