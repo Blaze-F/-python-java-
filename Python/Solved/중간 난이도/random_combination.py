@@ -142,7 +142,9 @@ import time
 start = time.time()  # 시작 시간 저장
 
 solved = RandomCombination()
+
 members = [i for i in range(1, 100 + 1)]
+
 print(solved.mix_members(members=members))
 
 print("time :", time.time() - start)  # 현재시각 - 시작시각 = 실행 시간
