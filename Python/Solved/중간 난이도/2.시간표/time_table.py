@@ -15,9 +15,11 @@ class MakeTimeTables:
         timetable_dict = {"a": a_time, "b": b_time, "c": c_time, "d": d_time}
 
         preprocessed_dict = self.preprocessor(preprocess=timetable_dict, start_time=10, end_time=18)
+        
         res_list = self.calc_work_time(
             preprocessed_dict=preprocessed_dict, max_worktime_week=10, full_worktime_day=8
         )
+        
         res_dict = self.convert_list_to_dict(res_list)
 
         return res_dict
