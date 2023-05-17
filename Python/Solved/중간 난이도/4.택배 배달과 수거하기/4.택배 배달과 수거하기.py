@@ -28,6 +28,7 @@ def solution(cap, n, deliveries, pickups):
     return (
         sum(max(next(d_points, 0), next(p_points, 0)) + 1 for _ in range(max(d_length, p_length)))
         * 2
+        
     )
 
 
