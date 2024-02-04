@@ -14,8 +14,7 @@
 둘째 줄에 길이 n의 수열이 하나의 공백을 사이에 두고 주어진다. 
 수열의 각 수는 -2,147,483,648보다 크거나 같고, 2,147,483,647보다 작거나 같은 정수이다. 이후 셋째 줄 부터 q개의 줄에 걸쳐 쿼리가 주어진다. 
 쿼리의 형식은 “1 a b” 또는 “2 a b c d”이다. a, b, c, d는 n보다 작거나 같은 자연수이며, a ≤ b, c ≤ d임이 보장된다.
-"""
-"""
+
 5 2
 3 5 -2 3 -12
 2 1 3 2 4
@@ -33,23 +32,16 @@
 12
 6
 
-7 3
-12 5 -1 0 -4 3 -10
-1 2 7
-2 1 4 2 3
-2 1 7 3 4
     """
 
 def solution() :
     ans = []
     line = input().split()
-    lenght = line[0]
     qurey_count = int(line[1])
     sequence = []
     for i in input().split() :
         #str -> int
         sequence.append(int(i))
-    
     
     for i in range(qurey_count) :
         query = input().split()
@@ -59,7 +51,7 @@ def solution() :
             b = int(query[2]) 
             sum = listSum(sequence[a:b])
             #Swap
-            sequence[a],sequence[b-1] = sequence[a],sequence[b-1]
+            sequence[a-1],sequence[b-1] = sequence[b-1],sequence[a-1]
             ans.append(sum)
         else :
             #[a, b] 구간의 합에서 [c, d] 구간의 합을 뺀 값을 출력한다.
@@ -69,12 +61,11 @@ def solution() :
             d = int(query[4]) 
             sum = listSum(sequence[a:b]) - listSum(sequence[c:d])
             ans.append(sum)
-    
     #출력 함수
     for i in range(len(ans)) :
         print(ans[i])
     
-def typeCheck(input :int) -> bool :
+def typeCheck(input :str) -> bool :
     #쿼리 타입 체크 함수
     if input == '1' :
         return True
@@ -84,18 +75,16 @@ def typeCheck(input :int) -> bool :
 def listSum(input :list) -> int :
     #리스트 구간합 구하는 함수
     summary = 0
-    for i in input :
-        summary += i
+    for element in input :
+        summary += element
     return summary
 
 # Testing
 import time
 
-# 작업 코드
-
-
 start = time.time()  # 시작 시간 저장
+#작업 코드 시작
 solution()
-
+#작업 코드 종료
 print("time :", time.time() - start)  # 현재시각 - 시작시각 = 실행 시간
 
